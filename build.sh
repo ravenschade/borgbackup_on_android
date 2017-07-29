@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/sh
+#!/data/data/com.termux/files/usr/bin/bash
 set -x
 apt -y install make clang openssl-dev perl tsu wget git python python-dev gnupg2 dirmngr curl autoconf automake sed gettext gzip pkg-config
 
