@@ -12,9 +12,11 @@ How to use:
  - run "git clone https://github.com/ravenschade/borgbackup_on_android.git"
  - run "cd borgbackup_on_android; bash build.sh"
 
+Tested with:
+- termux 0.53
+- borg 1.0.12
 
 Tested so far is:
-
 - creation of repositories 
 - backup to repositories on the device
 - backup up to remote repositories via ssh
