@@ -30,6 +30,7 @@ tar -xf attr-2.4.47.src.tar.gz
 cd attr-2.4.47
 #fixing paths to sh
 sed -i "s/\/bin\/sh/\/data\/data\/com.termux\/files\/usr\/bin\/sh/" configure
+sed -i "s/\/bin\/sh/\/data\/data\/com.termux\/files\/usr\/bin\/sh/" install-sh
 sed -i "s/\/bin\/sh/\/data\/data\/com.termux\/files\/usr\/bin\/sh/" include/install-sh
 #fix for non-existent /tmp directory in set_cc_for_build of config.guess for 32-bit arm
 sed -i "s/TMPDIR=\/tmp/TMPDIR=tmp/g" config.guess
@@ -39,7 +40,7 @@ mkdir tmp
 
 #fix for ./include/attr/xattr.h:37:58: error: expected function body after function declarator
 #                      const void *__value, size_t __size, int __flags) __THROW;
-sed -i "s/__THROW//g" include/attr/xattr.h
+sed -i "s/__THROW//g" include/xattr.h
 make
 make install install-lib install-dev
 cd ..
@@ -52,6 +53,7 @@ tar -xf acl-2.2.52.src.tar.gz
 cd acl-2.2.52
 #fixing paths to sh
 sed -i "s/\/bin\/sh/\/data\/data\/com.termux\/files\/usr\/bin\/sh/" configure
+sed -i "s/\/bin\/sh/\/data\/data\/com.termux\/files\/usr\/bin\/sh/" install-sh
 sed -i "s/\/bin\/sh/\/data\/data\/com.termux\/files\/usr\/bin\/sh/" include/install-sh
 
 #fix for non-existent /tmp directory in set_cc_for_build of config.guess for 32-bit arm
