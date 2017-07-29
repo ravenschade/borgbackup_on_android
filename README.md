@@ -26,3 +26,28 @@ Tested and working on devices:
 - Samsung Galaxy Note 2 with Lineage 14.1 (n7100, armv7l)
 
 Feedback on tests with other devices and android versions is very welcome.
+
+So all in all my Android backup setup looks like:
+- borg, termux and tasker
+- termux: Task (https://f-droid.org/packages/com.termux.tasker/) for tasker integration
+- tsu (modified so that it takes commands with -c): https://github.com/ravenschade/tsu
+- .termux/tasker/backup.sh:
+``` bash
+#!/data/data/com.termux/files/usr/bin/bash
+date
+tsu -e -c "~/borgbackup_on_android/borg.sh"
+date
+read
+```
+- ~/borgbackup_on_android/borg.sh:
+```bash
+#!/data/data/com.termux/files/usr/bin/bash
+t=`date +%d_%m_%Y`
+export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=yes
+export BORG_RELOCATED_REPO_ACCESS_IS_OK=yes
+host=angler
+dirs="/ /system /vendor /cache /persist /firmware /storage /data"
+export BORG_RSH=borg_ssh_wrapper
+source /data/data/com.termux/files/home/borgbackup_on_android/borg-env/bin/activate
+borg create -C lz4 -p -v --stats --one-file-system backup:/backup/borg/$host::$t $dirs # 2> ~/borg_backup_${t}.err
+```
