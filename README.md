@@ -16,12 +16,12 @@ Tested with:
 - termux 0.53
 - borg 1.0.12
 
-Tested so far is:
+Tested and working so far is:
 - creation of repositories 
 - backup to repositories on the device
 - backup up to remote repositories via ssh
 
-Tested on devices:
+Tested and working on devices:
 - Huawei Nexus6p with stock Android 7.1.2 (angler, aarch64)
 - Samsung Galaxy Note 2 with Lineage 14.1 (n7100, armv7l)
 
