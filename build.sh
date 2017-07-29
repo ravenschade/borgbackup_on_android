@@ -68,16 +68,16 @@ patch -p0 < ../borg.patch
 
 pip install -e .
 
-#test by creating a backup of the borg directory
 cd ..
-borg init borg_test
-borg create test::1 borg_test
-borg list borg_test
-borg info borg_test::1
-borg list borg_test::1
-
 #need wrapper for ssh, because /system/lib64/ needs to be in LD_LIBRARY_PATH
 #otherwise: Remote: CANNOT LINK EXECUTABLE "ssh": library "libandroid-support.so" not found
 export BORG_RSH=borg_ssh_wrapper
 cp borg_ssh_wrapper /data/data/com.termux/files/usr/bin/borg_ssh_wrapper
 chmod +x /data/data/com.termux/files/usr/bin/borg_ssh_wrapper
+
+#test by creating a backup of the borg directory
+borg init borg_test
+borg create test::1 borg_test
+borg list borg_test
+borg info borg_test::1
+borg list borg_test::1
