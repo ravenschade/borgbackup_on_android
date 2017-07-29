@@ -10,7 +10,7 @@ How to use:
  - open app
  - run "apt update; apt install git"
  - run "git clone https://github.com/ravenschade/borgbackup_on_android.git"
- - run "cd borgbackup_on_android; sh build.sh"
+ - run "cd borgbackup_on_android; bash build.sh"
 
 
 Tested so far is:
