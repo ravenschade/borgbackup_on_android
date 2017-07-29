@@ -79,7 +79,7 @@ chmod +x /data/data/com.termux/files/usr/bin/borg_ssh_wrapper
 
 #test by creating a backup of the borg directory
 borg init borg_test
-borg create test::1 borg_test
+borg create borg_test::1 borg
 borg list borg_test
 borg info borg_test::1
 borg list borg_test::1
