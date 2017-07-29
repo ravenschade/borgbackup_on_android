@@ -5,6 +5,14 @@ Yoou don't root permission on your phone to use it. However without root permiss
 
 If you have root permission on your device, you can use tsu (https://github.com/cswl/tsu) to conveniently gain root permissions in termux and backup you complete device.
 
+How to use:
+ - install termux from F-Droid or Google Play (https://termux.com/)
+ - open app
+ - run "apt update; apt install git"
+ - run "git clone https://github.com/ravenschade/borgbackup_on_android.git"
+ - run "cd borgbackup_on_android; sh build.sh"
+
+
 Tested so far is:
 
 - creation of repositories 
