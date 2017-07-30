@@ -27,6 +27,13 @@ Tested and working on devices:
 
 Feedback on tests with other devices and android versions is very welcome.
 
+Warning messages like 
+````
+WARNING: linker: /data/data/com.termux/files/usr/lib/libacl.so.1.1.0: unused DT entry: type 0xf arg 0x449
+````
+are due to the Android linker. More details can be found at https://stackoverflow.com/questions/33206409/unused-dt-entry-type-0x1d-arg.
+
+
 So all in all my Android backup setup looks like:
 - borg, termux and tasker
 - termux: Task (https://f-droid.org/packages/com.termux.tasker/) for tasker integration
