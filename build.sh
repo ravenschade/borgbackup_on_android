@@ -36,7 +36,7 @@ sed -i "s/\/bin\/sh/\/data\/data\/com.termux\/files\/usr\/bin\/sh/" include/inst
 sed -i "s/TMPDIR=\/tmp/TMPDIR=tmp/g" config.guess
 mkdir tmp
 
-./configure CC=clang LDFLAGS=-lintl --prefix=/data/data/com.termux/files/usr/
+./configure CC=clang --prefix=/data/data/com.termux/files/usr/
 
 #fix for ./include/attr/xattr.h:37:58: error: expected function body after function declarator
 #                      const void *__value, size_t __size, int __flags) __THROW;
@@ -60,7 +60,7 @@ sed -i "s/\/bin\/sh/\/data\/data\/com.termux\/files\/usr\/bin\/sh/" include/inst
 sed -i "s/TMPDIR=\/tmp/TMPDIR=tmp/g" config.guess
 mkdir tmp
 
-./configure --prefix=/data/data/com.termux/files/usr/ CC=clang LDFLAGS=-lintl
+./configure --prefix=/data/data/com.termux/files/usr/ CC=clang
 make
 make install install-lib install-dev
 cd ..
