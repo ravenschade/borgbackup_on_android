@@ -10,9 +10,9 @@ How to use:
  - open app
  - run "apt update; apt install git"
  - run "git clone https://github.com/ravenschade/borgbackup_on_android.git"
- - set selinux to permissive (/system/bin/setenforce 1, otherwise virtualenv for python will not work properly)
  - run "cd borgbackup_on_android; bash build.sh"
-
+- (if virtualenv for python does not work properly you have to set selinux to permissive (do "/system/bin/setenforce 0" with root permissions))
+ 
 Tested with:
 - termux 0.53
 - borg 1.0.12
