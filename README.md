@@ -14,8 +14,8 @@ How to use:
 - (if virtualenv for python does not work properly you have to set selinux to permissive (do "/system/bin/setenforce 0" with root permissions))
  
 Tested with:
-- termux 0.53
-- borg 1.0.12
+- termux 0.54
+- borg 1.1.0
 
 Tested and working so far is:
 - creation of repositories 
@@ -23,8 +23,8 @@ Tested and working so far is:
 - backup up to remote repositories via ssh
 
 Tested and working on devices:
-- Huawei Nexus6p with stock Android 7.1.2 (angler, aarch64)
-- Samsung Galaxy Note 2 with Lineage 14.1 (n7100, armv7l)
+- Huawei Nexus6p with stock Android 8.0.0 (angler, aarch64)
+- Samsung Galaxy Note 2 with Lineage 14.1 (n7100, armv7l, only tested with borg 1.0)
 
 Feedback on tests with other devices and android versions is very welcome.
 
