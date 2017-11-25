@@ -9,8 +9,8 @@ source borg-env/bin/activate
 
 git clone https://github.com/borgbackup/borg.git
 cd borg
-git branch 1.0-maint remotes/origin/1.0-maint
-git checkout 1.0-maint
+git branch 1.1-maint remotes/origin/1.1-maint
+git checkout 1.1-maint
 
 pip install -r requirements.d/development.txt
 
