@@ -65,8 +65,9 @@ make
 make install install-lib install-dev
 cd ..
 
-#patching paths in setup.py
-patch -p0 < ../borg.patch
+#patching paths
+export BORG_OPENSSL_PREFIX="/data/data/com.termux/files/usr/"
+export BORG_LZ4_PREFIX="/data/data/com.termux/files/usr/"
 
 pip install -e .
 
