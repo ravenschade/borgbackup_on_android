@@ -11,11 +11,14 @@ How to use:
  - run "apt update; apt install git"
  - run "git clone https://github.com/ravenschade/borgbackup_on_android.git"
  - run "cd borgbackup_on_android; bash build.sh"
-- (if virtualenv for python does not work properly you have to set selinux to permissive (do "/system/bin/setenforce 0" with root permissions))
- 
+ - (if virtualenv for python does not work properly you have to set selinux to permissive (do "/system/bin/setenforce 0" with root permissions))
+
+Known issues:
+ - borg starting at 1.1 requires the system call sync_file_range (see https://github.com/borgbackup/borg/pull/985 and https://github.com/borgbackup/borg/issues/1961). The linux subsystem in Windows 10 and some older Android versions (for example Lineage including 14.1) do not yet have this. Lineage 15.0 has this call and should work. I have added a test to the build script that checks if sync_file_range is available. If it is not, then I apply a patch (borg_sync_file_range.patch) that replaces this sync with convential file syncs.
+
 Tested with:
 - termux 0.56
-- borg 1.1.3
+- borg 1.0.12, 1.1.3
 
 Tested and working so far is:
 - creation of repositories 

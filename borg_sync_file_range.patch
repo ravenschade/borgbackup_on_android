@@ -1,0 +1,16 @@
+diff --git a/src/borg/platform/linux.pyx b/src/borg/platform/linux.pyx
+index 25f71fa1..42ffa85f 100644
+--- a/src/borg/platform/linux.pyx
++++ b/src/borg/platform/linux.pyx
+@@ -225,8 +225,9 @@ def acl_set(path, item, numeric_owner=False):
+ cdef _sync_file_range(fd, offset, length, flags):
+     assert offset & PAGE_MASK == 0, "offset %d not page-aligned" % offset
+     assert length & PAGE_MASK == 0, "length %d not page-aligned" % length
+-    if sync_file_range(fd, offset, length, flags) != 0:
+-        raise OSError(errno.errno, os.strerror(errno.errno))
++    os.fdatasync(fd)
++    #if sync_file_range(fd, offset, length, flags) != 0:
++    #    raise OSError(errno.errno, os.strerror(errno.errno))
+     safe_fadvise(fd, offset, length, 'DONTNEED')
+ 
+ cdef unsigned PAGE_MASK = sysconf(_SC_PAGESIZE) - 1

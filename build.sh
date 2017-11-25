@@ -14,6 +14,16 @@ git checkout 1.1-maint
 
 pip install -r requirements.d/development.txt
 
+#find if sync_file_range is available
+s=`bash ../sync_file_range_test/test.sh`
+if [ "$s" = "1" ];
+then
+	echo "patching borg to not use sync_file_range...."
+	git apply ../borg_sync_file_range.patch
+else
+	echo "no need to patch borg"
+fi
+
 #download and build lz4
 wget https://github.com/lz4/lz4/archive/v1.7.5.tar.gz -O lz4.tar.gz
 tar -xf lz4.tar.gz
