@@ -26,7 +26,7 @@ Tested and working so far is:
 - backup up to remote repositories via ssh
 
 Tested and working on devices:
-- Huawei Nexus6p with stock Android 8.0.0 (angler, aarch64)
+- Huawei Nexus6p with stock Android 8.1.0 (angler, aarch64)
 - Samsung Galaxy Note 2 with Lineage 14.1 (n7100, armv7l, Android 7.1.1)
 
 Feedback on tests with other devices and android versions is very welcome.
