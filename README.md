@@ -1,4 +1,7 @@
 # borgbackup on android
+
+*Note: This process is no longer necessary, simply run `pkg install borgbackup` in Termus*
+
 This project provides build scripts to compile borgbackup (https://github.com/borgbackup/borg) and its dependencies on Android. It uses termux (https://termux.com/) as a lightweight environment. 
 
 Yoou don't root permission on your phone to use it. However without root permissions the access to data of other apps or system data is not possible, but you can still access your photos, videos,...
